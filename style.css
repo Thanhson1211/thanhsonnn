@@ -1,0 +1,582 @@
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+/* ===== HEADER SECTION ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #f7931e;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #f7931e;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-login, .btn-register {
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-login:hover {
+    background: #f5f5f5;
+}
+
+.btn-register {
+    background: #f7931e;
+    color: white;
+}
+
+.btn-register:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(247, 147, 30, 0.3);
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    background: #f5f5f5;
+    padding: 20px 5%;
+    margin-bottom: 30px;
+}
+
+.search-bar form {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-bar select, 
+.search-bar input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 15px;
+}
+
+.search-bar select {
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    width: 200px;
+    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") no-repeat;
+    background-position: right 10px center;
+    appearance: none;
+    cursor: pointer;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border-right: none;
+    border-left: none;
+}
+
+.search-bar button {
+    padding: 0 20px;
+    background: #f7931e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #e67e22;
+}
+
+.search-bar button i {
+    font-size: 18px;
+}
+
+/* ===== BANNER SECTION ===== */
+.banner {
+    margin-bottom: 40px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== PRODUCT/CAR SECTIONS ===== */
+.featured-cars {
+    padding: 30px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.featured-cars h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.featured-cars h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #f7931e;
+}
+
+/* Product Grid - For main.php */
+.product-container {
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-size: 2.2rem;
+
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #f7931e;
+}
+
+.page-title i {
+    margin-right: 10px;
+    color: #f7931e;
+}
+
+/* Combined Product/Car Listing Styles */
+.car-list,
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.car-item,
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.car-item:hover,
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.car-item img,
+.product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.car-item:hover img,
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+.view-detail-btn {
+    background: #f7931e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-detail-btn:hover {
+    background: #e67e22;
+    transform: scale(1.05);
+}
+
+.car-item h3,
+.product-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.car-item .price,
+.product-price {
+    font-size: 1.3rem;
+    color: #e74c3c;
+    font-weight: bold;
+    padding: 0 15px 15px;
+}
+
+.car-item .info,
+.product-meta {
+    padding: 0 15px 15px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.product-brand i {
+    margin-right: 5px;
+    color: #f7931e;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 15px;
+}
+
+.btn-contact {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.btn-contact:hover {
+    background: #2980b9;
+}
+
+.btn-contact i {
+    margin-right: 5px;
+}
+
+.btn-favorite {
+    background: transparent;
+    border: 1px solid #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #7f8c8d;
+}
+
+.btn-favorite:hover {
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+/* ===== FOOTER SECTION ===== */
+.footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 60px 5% 30px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #f7931e;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f7931e;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 12px;
+}
+
+.footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.footer-section a:hover {
+    color: #f7931e;
+    transform: translateX(5px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #f7931e;
+    transform: translateY(-5px);
+}
+
+.newsletter {
+    margin-top: 20px;
+}
+
+.newsletter input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.newsletter button {
+    background: #f7931e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+    background: #e67e22;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #bdc3c7;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .car-list,
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .main-nav {
+        margin: 15px 0;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-nav li {
+        margin: 5px 10px;
+    }
+    
+    .search-bar form {
+        flex-direction: column;
+    }
+    
+    .search-bar select, 
+    .search-bar input, 
+    .search-bar button {
+        width: 100%;
+        border-radius: 4px;
+        margin: 5px 0;
+    }
+    
+    .search-bar select {
+        border-radius: 4px;
+        border-right: 1px solid #ddd;
+    }
+    
+    .car-list,
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    
+    .car-item img,
+    .product-image img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-list,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-title,
+    .featured-cars h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
